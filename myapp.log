@@ -1,0 +1,44 @@
+2019-Sep-30 11:46:43 AM [main] DEBUG org.hibernate.SQL - 
+    
+    create table person (
+       id bigint not null auto_increment,
+        accress_level integer,
+        password varchar(255) not null,
+        person_name varchar(60),
+        user_name varchar(60) not null,
+        version bigint,
+        primary key (id)
+    ) engine=InnoDB
+2019-Sep-30 11:46:44 AM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table person 
+       drop index UK_peg7sp1le3ac0l7gdfld6wmb1
+2019-Sep-30 11:46:44 AM [main] DEBUG org.hibernate.SQL - 
+    
+    alter table person 
+       add constraint UK_peg7sp1le3ac0l7gdfld6wmb1 unique (user_name)
+2019-Sep-30 11:46:46 AM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2019-Sep-30 11:46:46 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2019-Sep-30 11:46:46 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [pass#123]
+2019-Sep-30 11:46:46 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Sean Murphy]
+2019-Sep-30 11:46:46 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - [seanm]
+2019-Sep-30 11:46:46 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [0]
+2019-Sep-30 11:46:47 AM [main] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        person
+        (accress_level, password, person_name, user_name, version) 
+    values
+        (?, ?, ?, ?, ?)
+2019-Sep-30 11:46:47 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [1]
+2019-Sep-30 11:46:47 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [barry@123]
+2019-Sep-30 11:46:47 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Barry Johnson]
+2019-Sep-30 11:46:47 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - [barryj]
+2019-Sep-30 11:46:47 AM [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [0]
+2019-Sep-30 11:46:47 AM [main] INFO  com.infotech.client.SaveDataClientTest - Person Records saved successfully
